@@ -1,6 +1,5 @@
 <?php
 $arr = [2, 6, 4, 5, 13, 1, 7, 10, 9, 11, 8, 3, 12];
-// $arr = [1, 3, 4, 2];
 
 $n = count($arr);
 $step = 0;
@@ -12,6 +11,7 @@ foreach ($arr as $key) {
 echo '<br>';
 
 bubble_sort($arr);
+insertion_sort($arr);
 
 // BUBBLE SORT
 function bubble_sort ($arr)
@@ -38,7 +38,7 @@ function bubble_sort ($arr)
 	foreach ($arr as $key) {
 		echo $key.' ';
 	}
-	echo '<br>Шаги: '.$steps;
+	echo '<br>Шаги: '.$steps.'<br>';
 }
 
 // INSERTION SORT
@@ -48,12 +48,21 @@ function insertion_sort ($arr)
 	$steps = 0;
 	$n = count($arr);
 
-	for ($j = 0; $j < $n; $j++) {
-		echo '';
+	for ($j=1; $j<$n; $j++) {
+		for ($x = $j-1; $x >= 0; $x--) {
+			if ($arr[$x+1] < $arr[$x]) {
+				$tmp = $arr[$x+1];
+				$arr[$x+1] = $arr[$x];
+				$arr[$x] = $tmp;
+			}
+			$steps++;
+			if ($arr[$x] >= $arr[$x-1])
+				break;
+		}
 	}
 
 	foreach ($arr as $key) {
 		echo $key.' ';
 	}
-	echo '<br>Шаги: '.$steps;
+	echo '<br>Шаги: '.$steps.'<br>';
 }
