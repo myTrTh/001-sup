@@ -1,3 +1,5 @@
+<a href="sd.php">Универсальная структура данных</a><br>
+<a href="fifo.php">Очередь</a><br>
 <a href="tentotwo.php">Системы счисления</a><br>
 <a href="stack.php">Стэк</a><br>
 <a href="anagramma.php">Анаграмма</a><br>
