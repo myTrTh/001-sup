@@ -1,3 +1,6 @@
+<a href="surrender.php">Сдача</a><br>
+<a href="hanoi.php">Ханойская башня</a><br>
+<a href="recurse.php">Рекурсия</a><br>
 <a href="palindrom.php">Палиндром</a><br>
 <a href="sd.php">Универсальная структура данных</a><br>
 <a href="fifo.php">Очередь</a><br>
