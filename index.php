@@ -1,3 +1,5 @@
+<a href="binary.php">Бинарный поиск</a><br>
+<a href="nosortlist.php">Несортированный список</a><br>
 <a href="palindrom.php">Палиндром</a><br>
 <a href="sd.php">Универсальная структура данных</a><br>
 <a href="fifo.php">Очередь</a><br>
