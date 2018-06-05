@@ -12,9 +12,10 @@ echo '<br>';
 
 bubble_sort($arr);
 insertion_sort($arr);
+selection_sort($arr);
 
 // BUBBLE SORT
-function bubble_sort ($arr)
+function bubble_sort($arr)
 {
 	echo '<br>Сортировка пузырьком<br>';
 	$steps = 0;
@@ -42,7 +43,7 @@ function bubble_sort ($arr)
 }
 
 // INSERTION SORT
-function insertion_sort ($arr)
+function insertion_sort($arr)
 {
 	echo '<br>Сортировка вставками<br>';
 	$steps = 0;
@@ -65,4 +66,31 @@ function insertion_sort ($arr)
 		echo $key.' ';
 	}
 	echo '<br>Шаги: '.$steps.'<br>';
+}
+
+// SELECTION SORT
+function selection_sort($arr)
+{
+	echo '<br>Сортировка выбором<br>';
+	$steps = 0;
+	$n = count($arr);
+
+	for ($j = 0; $j < $n; $j++) {
+		$min = $j;
+		for ($i = $j+1; $i < ($n); $i++) {
+			if ($arr[$i] < $arr[$min])
+				$min = $i;
+			$steps++;
+		}
+		if ($arr[$j] > $arr[$min]) {
+			$tmp = $arr[$j];
+			$arr[$j] = $arr[$min];
+			$arr[$min] = $tmp;
+		}
+	}
+
+	foreach ($arr as $key) {
+		echo $key.' ';
+	}
+	echo '<br>Шаги: '.$steps.'<br>';	
 }
