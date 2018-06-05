@@ -1,3 +1,4 @@
+<a href="hash.php">Хэш таблица</a><br>
 <a href="binary.php">Бинарный поиск</a><br>
 <a href="nosortlist.php">Несортированный список</a><br>
 <a href="palindrom.php">Палиндром</a><br>
