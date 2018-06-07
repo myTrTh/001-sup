@@ -1,8 +1,6 @@
 <?php
 
-echo 'Сортировка слиянием<br><br>';
-
-$list = [54, 26, 93, 17, 77, 31, 8, 44, 55];
+include_once 'array.php';
 
 function merge(&$list)
 {
@@ -43,6 +41,7 @@ function merge(&$list)
 	}
 }
 
+echo 'Сортировка слиянием<br><br>';
 print "<pre>";
 print_r($list);
 print "</pre>";
@@ -50,3 +49,5 @@ merge($list);
 print "<pre>";
 print_r($list);
 print "</pre>";
+echo 'Memory: ';
+echo memory_get_usage();
