@@ -1,3 +1,5 @@
+<a href="quick.php">Быстрая сортировка</a><br>
+<a href="merge.php">Сортировка слиянием</a><br>
 <a href="hash.php">Хэш таблица</a><br>
 <a href="binary.php">Бинарный поиск</a><br>
 <a href="nosortlist.php">Несортированный список</a><br>
