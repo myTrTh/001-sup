@@ -1,3 +1,4 @@
+<a href="binarytree.php">Бинарное Дерево</a><br>
 <a href="treeclass.php">Класс Дерево</a><br>
 <a href="tree.php">Деревья</a><br>
 
