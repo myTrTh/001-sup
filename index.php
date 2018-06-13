@@ -1,12 +1,11 @@
+<a href="graph.php">Графы</a><br>
 <a href="binarytree.php">Бинарное Дерево</a><br>
 <a href="treeclass.php">Класс Дерево</a><br>
 <a href="tree.php">Деревья</a><br>
-
 <a href="merge.php">Сортировка слиянием</a><br>
 <a href="selection_sort.php">Сортировка выбором</a><br>
 <a href="insertion_sort.php">Сортировка вставками</a><br>
 <a href="buble_sort.php">Сортировка пузырьками</a><br>
-
 <a href="hash.php">Хэш таблица</a><br>
 <a href="binary.php">Бинарный поиск</a><br>
 <a href="nosortlist.php">Несортированный список</a><br>
