@@ -21,31 +21,49 @@ function connectVertex(array &$graph, string $from, string $to, int $weight)
 
 function getPath(&$graph, $from, $to)
 {
-	$path = [];
-	$path_weight = 0;
-	$process = true;
-	asort($graph[$from]);
-	while ($process) {
-		if ($graph[$from][$to]) {
-			$path_weight = $graph[$from][$to];
-			echo 'Решение найдено. Кратчайший путь составляет: '.$path_weight;
-			$process = false;
-		} else {
-			asort($graph[$from]);
+	$start = $from;
+	$path = [$from];
+	$weight = 0;
+	$processing = true;
+	$i = 0;
+	$max = count($graph) *2;
 
-			foreach ($graph[$from] as $key => $value) {
-				$path[$from] = $key;
-				$path_weight += $value;
-				break;
-			}
-			array_shift($graph[$from]);
+	while ($processing) {
 
+		if ($from == $to) {
+			echo 'Путь из '.$start.' в '.$to.' найден длиной в '.$weight.'<br>';
+			print "<pre>";
+			print_r($path);
+			print "</pre>";
+			$processing = false;		
 		}
-		echo 'actual path weight: '.$path_weight.'<br>';
-		print "<pre>";
-		print_r($path);
-		print "</pre>";
-		break;
+
+		// step define
+		if (count($path)) {
+			$first = $path[count($path)-1];
+			asort($graph[$first]);
+			// if isset direct path to finish
+			if (array_key_exists($to, $graph[$first])) {
+				$path[] = $to;
+				$weight += $graph[$first][$to];
+				$from = $to;
+			} else {
+				foreach ($graph[$first] as $key => $value) {
+					if (!in_array($key, $path)) {
+						$path[] = $key;
+						$weight += $value;
+						break;
+					}
+				}
+				$from = $key;
+			}
+		} else {
+			echo '<br>Путь не найден.';
+		}
+
+		$i++;
+		if ($i == $max)
+			$processing = false;			
 	}
 }
 
@@ -65,17 +83,13 @@ addVertex($graph, $f);
 
 connectVertex($graph, $a, $b, 4);
 connectVertex($graph, $a, $f, 2);
-connectVertex($graph, $a, $e, 2);
-connectVertex($graph, $b, $f, 4);
+connectVertex($graph, $a, $e, 3);
+connectVertex($graph, $b, $f, 3);
 connectVertex($graph, $b, $c, 3);
 connectVertex($graph, $c, $f, 4);
 connectVertex($graph, $c, $d, 2);
-connectVertex($graph, $d, $f, 3);
-connectVertex($graph, $d, $e, 1);
+connectVertex($graph, $d, $f, 2);
+connectVertex($graph, $d, $e, 4);
 connectVertex($graph, $e, $f, 1);
 
 getPath($graph, $a, $c);
-
-print "<pre>";
-print_r($graph);
-print "</pre>";
